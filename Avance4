@@ -1,6 +1,29 @@
-Para la inserción de datos vamos a utilizar una sintaxis de este tipo:
+Facultad de Tecnologías de Informática y Comunicaciones
+
+Esc. Ingeniería de Sistemas Informáticos.
+
+Avance 4,  Proyecto de final
+
+
+Profesor: Lic. Jorge Isaac Vásquez Valenciano.
+
+Estudiantes: 
+
+
+Carlos Antonio González.
+Guido Alexander Méndez.
+Brayan Martin Guzmán Sánchez.
+
+
+
+Insert
+
+Sintaxis :
+
 
 mysqli_query($link, "INSERT INTO nombreTabla VALUES (datoCol1, datoCol2, … datoColN)");
+
+Detalle> 
 
 mysqli_query (Consultas, en este caso es una inserción de datos),
 $link  (Identificador de conexión que hayamos obtenido con mysqli_connect), 
@@ -8,3 +31,30 @@ nombreTabla (nombre de la tabla en la cual vamos a realizar la inserción de dat
 datoCol1, datoCol2, …, datoColN (datos que vamos a insertar en la tabla), 
 Se deben insertar los datos en el mismo orden en que se encuentran las columnas en la tabla. 
 
+
+SENTENCIA DELETE Y CLÁUSULA WHERE
+
+Sintaxis :
+
+mysqli_query($link, " DELETE FROM nombreTabla WHERE columna (>, <, =, etc.) valorEspecificado ");
+
+Detalle> 
+
+La cláusula WHERE nos sirve para indicar una condición. 
+Por ejemplo DELETE FROM agenda WHERE altura > 1.90 significa “borrar todas las filas de la tabla agenda en las que en la 
+columna altura exista un valor mayor que 1.90”. Fíjate que al indicar mayor (y no mayor o igual) una fila donde la altura 
+sea exactamente 1.90 no será borrada.
+
+La cláusula WHERE también puede ser aplicada cuando hacemos consultas de tipo SELECT. 
+
+Por ejemplo en entregas anteriores del curso usamos SELECT * FROM agenda como consulta que nos devolvía todas las 
+filas de la tabla agenda. Si escribiéramos SELECT * FROM agenda WHERE edad <= 35 obtendríamos como resultado todas
+las filas de la tabla agenda donde la columna edad contiene un valor menor o igual a 35.
+
+En una cláusula where podemos establecer una condición de igualdad (=) pero también podremos usar otras condiciones 
+como mayor (>), menor(<), mayor o igual (>=), menor o igual (<=), y también condiciones múltiples y condiciones más 
+complejas, pero no vamos a entrar en detalles sobre esto ahora.
+
+Igual que podemos hacer una consulta para obtener todas las filas de una tabla, también podremos borrar todos los 
+registros de una tabla en concreto y, para ello, sólo basta con omitir las condiciones, es decir, hacer una consulta 
+escribiendo lo siguiente: DELETE FROM nombreTabla
