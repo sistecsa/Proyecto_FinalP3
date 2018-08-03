@@ -1,0 +1,10 @@
+Para la inserción de datos vamos a utilizar una sintaxis de este tipo:
+
+mysqli_query($link, "INSERT INTO nombreTabla VALUES (datoCol1, datoCol2, … datoColN)");
+
+mysqli_query (Consultas, en este caso es una inserción de datos),
+$link  (Identificador de conexión que hayamos obtenido con mysqli_connect), 
+nombreTabla (nombre de la tabla en la cual vamos a realizar la inserción de datos),
+datoCol1, datoCol2, …, datoColN (datos que vamos a insertar en la tabla), 
+Se deben insertar los datos en el mismo orden en que se encuentran las columnas en la tabla. 
+
